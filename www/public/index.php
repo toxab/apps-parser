@@ -6,6 +6,10 @@ require_once __DIR__ . '/../src/config/Database.php';
 require_once __DIR__ . '/../src/Controllers/HomeController.php';
 require_once __DIR__ . '/../src/Repositories/ProjectsRepository.php';
 
+    if(file_exists(__DIR__ . '/../env.php')) {
+        require_once __DIR__ . '/../env.php';
+    }
+
 use App\Controllers\HomeController;
 use Klein\Klein;
 use App\Repositories\ProjectsRepository;

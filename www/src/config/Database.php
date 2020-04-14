@@ -49,10 +49,10 @@ class Database
     public function dbConn(): Mysql
     {
         $pdo = new PDOConnector(
-            'mysql-parser-db', // docker name of mysql container
-            'root',      // user
-            'root',      // password
-            'parserdb'   // database
+            getenv('DB_HOST'),            // docker name of mysql container
+            getenv('DB_USER_NAME'),      // user
+            getenv('DB_PASSWORD'),      // password
+            getenv('DB_NAME')          // database
         );
         
         $pdoConn = $pdo->connect('utf8', []); // charset, options

@@ -11,15 +11,15 @@
         "sort-packages": true
     },
     "require": {
+        "ext-iconv": "*",
         "ext-json": "*",
+        "ext-mbstring": "*",
         "bentools/where": "^1.2@dev",
         "guzzlehttp/guzzle": "^6.3",
         "klein/klein": "^2.1",
         "simplon/mysql": "*",
         "twig/twig": "^2.0",
-        "vlucas/phpdotenv": "^4.1@dev",
-        "ext-iconv": "*",
-        "ext-mbstring": "*"
+        "vlucas/phpdotenv": "^4.1@dev"
     },
     "autoload-dev": {
         "psr-4": {

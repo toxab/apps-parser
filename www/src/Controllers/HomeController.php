@@ -144,7 +144,7 @@ class HomeController extends Controller
             'v2/projects',
             ['headers' =>
                 [
-                    'Authorization' => 'Bearer ecacd723b8af46d23126eb07d45690dfb356cc37'
+                    'Authorization' => 'Bearer '.getenv('MY_APP_TOKEN')
                 ]
             ]
         );

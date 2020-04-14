@@ -14,6 +14,12 @@ This is a basic LAMP stack environment built using Docker Compose. It consists f
 cp sample.env .env
 docker-compose up -d
 ```
+after
+```$xslt
+cd /www
+cp env.local.php env.php
+```
+
 Your LAMP stack is now ready!! You can try it via `http://localhost`.
 
 ## Xdebug in phpStorm
