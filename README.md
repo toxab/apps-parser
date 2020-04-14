@@ -1,12 +1,12 @@
 
-# apps-parser built with LAMP stack in docker-compose.yml
+# apps-parser built with Lamp stack and Docker
 
 This is a basic LAMP stack environment built using Docker Compose. It consists following:
 
 * PHP 7.2
 * Apache 2.4
 * MySQL 5.7
-* phpMyAdmin
+* phpMyAdmin 5.0.2
 * xdebug 2.6.0
 ## Installation
 
@@ -14,7 +14,7 @@ This is a basic LAMP stack environment built using Docker Compose. It consists f
 cp sample.env .env
 docker-compose up -d
 ```
-Your LAMP stack is now ready!! You can access it via `http://localhost`.
+Your LAMP stack is now ready!! You can try it via `http://localhost`.
 
 ## Xdebug in phpStorm
 just paste your ip into php.ini and docker-compose.yml files,
@@ -32,7 +32,26 @@ and docker-compose.yml
 ## phpMyAdmin
 
 phpMyAdmin is configured to run on port 8080. Use following default credentials.
-
-http://localhost:8080/  
+`http://localhost:8080/`  
 username: root  
 password: root
+
+## Mysql
+
+dump of db located in dump_sql/ folder
+
+db config in www/src/Database.php
+
+    public function dbConn(): Mysql
+        {
+            $pdo = new PDOConnector(
+                'mysql-parser-db', // docker name of mysql container.
+                'root',      // user
+                'root',      // password
+                'parserdb'   // database
+            );
+            
+            $pdoConn = $pdo->connect('utf8', []); // charset, options
+            return new Mysql($pdoConn);
+        }
+        
