@@ -1,7 +1,7 @@
 
 # apps-parser built with Lamp stack and Docker
 
-This is a basic LAMP stack environment built using Docker Compose. It consists following:
+This is a basic LAMP stack environment built using docker-compose.yml file. It consists following:
 
 * PHP 7.2
 * Apache 2.4
