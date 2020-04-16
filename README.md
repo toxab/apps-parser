@@ -51,13 +51,15 @@ db config in www/src/Database.php
     public function dbConn(): Mysql
         {
             $pdo = new PDOConnector(
-                'mysql-parser-db', // docker name of mysql container.
-                'root',      // user
-                'root',      // password
-                'parserdb'   // database
+                   'MY_APP_TOKEN' => '<MY_APP_TOKEN>', // token from https://freelancehunt.com/my/api2
+                   'DB_HOST' => '<mysql-container-name>', //docker name of mysql container.
+                   'DB_USER_NAME' => 'root', // db userName
+                   'DB_PASSWORD' => 'root', // db password
+                   'DB_NAME' => 'parserdb', // db name
             );
             
             $pdoConn = $pdo->connect('utf8', []); // charset, options
             return new Mysql($pdoConn);
         }
         
+get token `https://freelancehunt.com/my/api2`
